@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rejuff.Views.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}" RefreshColor="{StaticResource AppTheme}">
+            <StackLayout Spacing="0">
+                <!--Screen Header-->
+                <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" HeightRequest="60" BackgroundColor="{StaticResource AppTheme}">
+                    <StackLayout Margin="10,0,0,0" WidthRequest="40">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BackButtonCmd}"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="back" HeightRequest="20" WidthRequest="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                    </StackLayout>
+                    <Label Text="{StaticResource MainMenu1}" TextTransform="Uppercase" VerticalTextAlignment="Center" TextColor="White" FontSize="20" FontAttributes="Bold" Margin="15,0,0,0"></Label>
+                </StackLayout>
+                <!--SearchBar-->
+                <Label Text="Today's Selling Price List" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold"></Label>
+                <!--Stuff ListView Layout-->
+                <ScrollView>
+                    <StackLayout Spacing="0" Margin="0" Padding="10">
+                        <!--Stuff ListView-->
+                        <CollectionView x:Name="StuffListView" ItemsSource="{Binding StuffList}">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="3"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="White" BorderColor="Transparent" CornerRadius="4" Margin="5,5,5,0" Padding="10">
+                                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand">
+                                            <Image Source="{Binding stuffIcon}" HeightRequest="75" WidthRequest="75"></Image>
+                                            <Label Text="{Binding stuffName}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                                            <Label Text="{Binding stuffPrice}" HorizontalTextAlignment="Center"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </ScrollView>
+                <Button Text="Schedule Your Pickup" Command="{Binding PikcupBtnCmd}" BackgroundColor="{StaticResource AppTheme}" HorizontalOptions="FillAndExpand" Margin="10" TextColor="Black" FontAttributes="Bold"></Button>
+            </StackLayout>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rejuff.Views.PickupSchedulePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Screen Header-->
+            <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" HeightRequest="60" BackgroundColor="{StaticResource AppTheme}">
+                <StackLayout Margin="10,0,0,0" WidthRequest="40">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackButtonCmd}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="back" HeightRequest="20" WidthRequest="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                </StackLayout>
+                <Label Text="{StaticResource MainMenu1}" TextTransform="Uppercase" VerticalTextAlignment="Center" TextColor="White" FontSize="20" FontAttributes="Bold" Margin="15,0,0,0"></Label>
+            </StackLayout>
+            
+            <!--Screen Instruction-->
+            <Label 
+                Text="Schedule your pickup now! We will reach you within a hour and collect your unused stuff."   
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <!--Schedule Form-->
+            <StackLayout>
+                <!--Pickup Address-->
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Pikcup Address" TextColor="Black" FontAttributes="Bold" HorizontalOptions="StartAndExpand"></Label>
+                        <Label Text="Change Address" TextColor="Blue" TextDecorations="Underline" HorizontalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeAddressBtnCmd}"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <Label Text="{Binding UserAddress}"></Label>
+                </StackLayout>
+
+                <!--Pickup Date-->
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="10">
+                    <Label Text="Pikcup Date" TextColor="Black" FontAttributes="Bold" HorizontalOptions="StartAndExpand"></Label>
+                    <DatePicker Date="{Binding PickupDate}" MinimumDate="{Binding MinPickupDate}"></DatePicker>
+                </StackLayout>
+
+                <!--Pickup Time-->
+                <StackLayout Orientation="Vertical" Spacing="0" Margin="10">
+                    <Label Text="Pikcup Time" TextColor="Black" FontAttributes="Bold" HorizontalOptions="StartAndExpand"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="{Binding TimeSlot1FrameColor}" CornerRadius="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TimeSlot1Cmd}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Label Text="08 AM - 11 AM" TextColor="{Binding TimeSlot1TextColor}"></Label>
+                        </Frame>
+                        <Frame BackgroundColor="{Binding TimeSlot1FrameColor}" CornerRadius="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TimeSlot2Cmd}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Label Text="11 AM - 02 PM" TextColor="{Binding TimeSlot2TextColor}"></Label>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="{Binding TimeSlot3FrameColor}" CornerRadius="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TimeSlot3Cmd}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Label Text="02 PM - 05 PM" TextColor="{Binding TimeSlot3TextColor}"></Label>
+                        </Frame>
+                        <Frame BackgroundColor="{Binding TimeSlot4FrameColor}" CornerRadius="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TimeSlot4Cmd}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Label Text="05 PM - 08 PM" TextColor="{Binding TimeSlot4TextColor}"></Label>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--Pickup Button-->
+                <Button Text="Schedule Pickup" Command="{Binding SchedulePikcupBtnCmd}" BackgroundColor="{StaticResource AppTheme}" HorizontalOptions="FillAndExpand" Margin="10" TextColor="Black" FontAttributes="Bold"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

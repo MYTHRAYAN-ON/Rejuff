@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+        xmlns:pages="http://rotorgames.com" 
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Rejuff.Views.CustomPopup.Popup_ProgressBar">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent">
+            <ActivityIndicator IsRunning="True" Color="{StaticResource AppTheme}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></ActivityIndicator>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

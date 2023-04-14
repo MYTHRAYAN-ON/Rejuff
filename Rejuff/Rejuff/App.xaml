@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rejuff.App">
+    <Application.Resources>
+        <!--LogIn Page-->
+        <x:String x:Key="LogIn">Log in with Student / Staff ID Number</x:String>
+
+        <!--Main Page-->
+        <x:String x:Key="MainMenu1">Teachers</x:String>
+        <x:String x:Key="MainMenu2">Time Table</x:String>
+        <x:String x:Key="MainMenu3">Home Work</x:String>
+        <x:String x:Key="MainMenu4">Video Tutorials</x:String>
+        <x:String x:Key="MainMenu5">Online Class</x:String>
+        <x:String x:Key="MainMenu6">Notifications</x:String>
+        <x:String x:Key="MainMenu7">Log out</x:String>
+
+        <!--Teachers Page-->
+        <x:String x:Key="QualificationHeader">Qualification:</x:String>
+        <x:String x:Key="ExperienceHeader">Experience:</x:String>
+        <x:String x:Key="SubjectHeader">Subject taken:</x:String>
+
+        <!--Popup Strings-->
+        <x:String x:Key="NoInternetContent">We can't able to connect with internet</x:String>
+        <x:String x:Key="TryagainButtonText">Try Again</x:String>
+
+
+        <Color x:Key="AppTheme">#00E3A3</Color>
+        <Color x:Key="AppPrimaryTheme">#07E9ED</Color>
+        <!--<Color x:Key="AppPrimaryTheme">#07b8ff</Color>-->
+        <!--<Color x:Key="AppPrimaryTheme">#FFD662</Color>
+        <Color x:Key="AppPrimaryTheme">#03A89E</Color>-->
+    </Application.Resources>
+</Application>

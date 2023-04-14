@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+        xmlns:pages="http://rotorgames.com" 
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Rejuff.Views.CustomPopup.Popup_NoInternet">
+    <StackLayout>
+        <Frame CornerRadius="4" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" Margin="20" Padding="20">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
+                <Label Text="{StaticResource NoInternetContent}" HorizontalOptions="CenterAndExpand" Margin="10"></Label>
+                <Button Text="{StaticResource TryagainButtonText}" BackgroundColor="{StaticResource AppTheme}" BorderColor="LightGray" TextColor="Black" Clicked="TryAgain_Clicked" Margin="10"></Button>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>
